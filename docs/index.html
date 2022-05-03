@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Stack Overflow 0 to 2000 in 30 Days - John Wang - CoderCruise 2018</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="./cc/remark-0.4.2.min.js" type="text/javascript">
+      {"highlightStyle": "monokai",
+       "highlightLanguage": "ruby" }
+    </script>
+    <style type="text/css" media="screen">
+      body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 400;
+      }
+      h1, h2, h3 {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 400;
+        margin: 5px;
+      }
+      h1 { font-size: 3.5em; }
+      h2 { font-size: 2.3em; }
+      h3 { font-size: 1.6em; }
+      body { font-size: 1.5em; }
+
+      .slide .content {
+        padding: 10px 90px !important;
+      }
+
+      #slideshow .no-highlight {
+        font-size: 1em !important;
+      }
+
+      blockquote {
+        font-style: italic;
+        margin: 0.25em 0;
+        padding: 0.25em 40px;
+        line-height: 1.45;
+        position: relative;
+      }
+
+      blockquote:before {
+        opacity: 0.8;
+        display: block;
+        content: "\201C";
+        font-size: 3em;
+        position: absolute;
+        left: -20px;
+        top: -20px;
+      }
+
+      blockquote cite {
+        opacity: 0.8;
+        font-size: 1em;
+        display: block;
+        margin-top: 5px;
+      }
+ 
+      blockquote cite:before {
+        content: "\2014 \2009";
+      }
+
+     /* Two-column layout */
+    .left-column {
+      width: 50%;
+      float: left;
+    }
+    .right-column {
+      width: 50%;
+      float: right;
+    }
+
+    code {
+      -moz-border-radius: 5px;
+      -web-border-radius: 5px;
+      background: #e7e8e2;
+      border-radius: 5px;
+    }
+
+    .inverse {
+      background: #272822;
+    }
+    .inverse h1, .inverse h2, .inverse h3, .inverse h4, .inverse p, .inverse li {
+      color: #f3f3f3;
+      /*line-height: 0.8em;*/
+    }
+    .inverse a {
+      color: cyan;
+    }
+
+    /* slides */
+    .bg-section {
+      background: #272822;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+      font-weight: 400;
+    }
+    .bg-section p {
+      font-size: 2em;
+    }
+
+    .bg {
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .bg-title {
+      background-image:url(images/stack-overflow-2k-coder-cruise-hero.png);
+      background-color: #f3d855;
+    }
+
+    .bg-conference {
+      background-image:url(images/coder-cruise-hero.png);
+      background-color: #fff;
+    }
+
+    .bg-reputation {
+      background-image:url(images/stack-overflow-reputation-grokify.png);
+      background-color: #fff;
+    }
+
+    .bg-awesome {
+      background-image:url(images/awesome.png);
+      background-color: #fff;
+    }
+
+    .bg-happiness {
+      background-image:url(images/positive-friday.jpg);
+      background-color: #fff;
+      color: #fff;
+    }
+
+    .bg-embarassed {
+      background-image:url(images/your-answer-is-terrible.jpg);
+      background-color: #000;
+    }
+
+    .bg-superheroes {
+      background-image:url(images/superheroes.jpg);
+      background-color: #fff;
+    }
+
+    .bg-focus {
+      background-image:url(images/too-many-things-you-do-focus-you-must.jpg);
+      background-color: #000;
+      color: #fff;
+    }
+
+    .bg-question-velocity {
+      background-image:url(images/stack-overflow_question-velocity.png);
+    }
+
+    .bg-question-velocity-results {
+      background-image:url(images/stack-overflow_grokbase_vote-tags.png);
+    }
+
+    .bg-red {
+      background: #A60A17;
+    }
+    .bg-dark {
+      color: white;
+      text-shadow: 0 0 20px #333;
+    }
+    .bg-matz {
+      background-image:url(images/matz.jpeg);
+    }
+
+    </style>
+  </head>
+  <body>
+<!--
+
+name: inverse
+class: center, middle, inverse, bg-dark
+layout: true
+---
+# Stack Overflow
+### 0 to 2000 in 6 Weeks
+
+#### John Wang, aka Grokify
+#### CoderCruise 2018
+---
+
+-->
+    <textarea id="source">
+
+class: bg-title bg
+
+---
+layout: false
+
+### Who am I?
+
+* John Wang - aka "Grokify"
+* Head of PM for RingCentral Developer Program
+* Top 50 Contributor (of 900+) to OpenAPI Generator 
+* Built an Alexa 12k website
+
+--
+
+
+* Recent focus on Product Mgmt, Product Marketing
+* Weekend Warrior
+
+--
+
+
+* 6,785 Stack Overflow reputation - Top 0.01%
+* 2,000+ reputation in 28 days of posting
+
+
+---
+
+class: middle, center, inverse
+
+### Head a Dev Program?
+
+### Need a Stack Overflow Tag!
+
+---
+
+class: bg-reputation bg
+
+### 28 Days of Posts
+
+---
+### Agenda
+
+* Why 2000?
+* 7 Steps to Success
+  1. Choose Identity
+  2. Choose Approach
+  3. Choose Tags
+  4. Monitor Questions
+  5. Post Answers
+  6. Refine Answers
+  7. Humility / General Niceness
+* Results
+
+---
+
+class: center, middle, inverse
+
+# Why 2000?
+
+---
+
+class: bg-awesome bg
+
+---
+
+### What You Get
+
+* **edit questions and answers @ 2,000**
+* *create tags @ 1,500*
+* create gallery chat rooms @ 1,000
+* access review queues @ 500
+* view close votes @ 250
+* reduce ads @ 200
+* vote down @ 125
+* edit community wiki, create chat rooms @ 100
+* set bounties @ 75
+* comment everywhere @ 50
+* talk in chat  @ 20
+* flag posts, vote up @ 15
+* post more links, answer protected questions, create wiki posts @ 10
+* participate in meta @ 5
+
+---
+
+class: bg-happiness bg
+
+## What You Really Get
+
+---
+
+### 7 Steps to Success
+
+<br /><br />
+
+<center>
+<img src="images/stack-overflow_7-steps_linear-legend.svg" style="height:120%;width:auto" />
+</center>
+
+---
+
+class: center, middle, inverse
+
+## Step 1
+
+## Choose Your Identity
+
+---
+
+class: bg-embarassed bg
+
+---
+
+class: bg-superheroes bg
+
+### Have a Secret Identity
+
+---
+
+### Your Identity
+
+* Hide your identity to gain confidence
+
+
+* You can reveal yourself any time
+  * Users are assigned numeric ids, not usernames
+  * Usernames can be changed at any time
+  * Display names can be chnaged at any time
+
+
+* No one cares if you are anonymous
+
+---
+
+class: center, middle, inverse
+
+## Steps 2 and 3
+
+## Choose Your Strategy
+
+
+### Reputation + Tags
+
+---
+
+class: bg-focus bg
+
+---
+
+### Reputation Overview
+
+* Questions
+  * 5 for upvote
+  * 2 for accepting answer
+* Answers
+  * 15 for accept
+  * 10 for upvote
+  * 25-500 for bounties
+* Edits
+  * 2 for accepted edit
+
+---
+
+### Reputation Overview
+
+* 200 point daily limit (upvotes + edits)
+
+
+* Exceptions for daily limit
+  * Bounties are immune to daily limit
+  * Association bonus (100 points)
+  * Accepting an answer (2 points)
+  * Having an answer be accepted (15 points)
+
+---
+
+### Questions
+
+Pros
+
+* Don't have to be an expert
+
+Cons
+
+* Need to post questions that haven't been asked
+* Need to ask questions that are "on-topic"
+* Esoteric questions may not get much traffic
+
+---
+
+### Answers
+
+Pros
+
+* Lots of questions to answer
+* More points: 10/upvote, 15/acceptance, bounties
+* Builds your expertise (for hiring)
+
+Cons
+
+* Have to be fast for simple questions
+
+---
+
+### Edits
+
+Pros
+
+* Simple
+* Little expertise needed
+* Can just fix project name
+
+Cons
+
+* Doesn't build expertise
+* Caps out at 2,000 reputation
+
+---
+
+### Why Answers?
+
+* Builds expertise
+* Good for Developer Relations
+* Less frustration vs. questions
+* Higher velocity vs. edits
+
+---
+
+### How Many Answers?
+
+* Estimate how many answers you need
+* Easy way: go to Users tab and sort by Reputation
+
+```
+SELECT
+  owner_user_id AS user_id,
+  COUNT(id) AS answer_count,
+  CONCAT(
+    "https://stackoverflow.com/users/",
+    CAST(owner_user_id AS STRING)) AS user_url
+FROM `bigquery-public-data.stackoverflow.posts_answers`
+WHERE owner_user_id IN (
+  SELECT id FROM `bigquery-public-data.stackoverflow.users`
+  WHERE reputation=2000
+  ORDER BY creation_date DESC
+  LIMIT 100 )
+GROUP BY owner_user_id
+ORDER BY answer_count DESC
+```
+
+---
+
+### Answer Counts
+
+* Less than 200, estimate 100
+
+<center>
+<img src="images/stack-overflow_users_2000-rep_answer-counts.png" style="height:auto;width:80%" />
+</center>
+
+---
+
+class: center, middle, inverse
+
+## Step 3
+
+## Choose Tags
+
+---
+
+### Focus: Choosing Tags
+
+* Build expertise
+* Accelerate ability to post good answers
+
+--
+
+
+* Need flow of new questions
+* Healthy asker : answerer ratio
+
+---
+
+### Question Velocity by Tag
+
+* Need new questions to answer
+* Google BigQuery with public dataset
+
+```sql
+SELECT
+  tag,
+  COUNT(tag) AS count_last_3_months,
+  CAST(COUNT(tag) / 90 AS INT64) AS count_per_day,
+  CAST(COUNT(tag) / 90 / 24 AS INT64) AS count_per_hour
+FROM (
+  SELECT SPLIT(q.tags, '|') AS tag
+  FROM `bigquery-public-data.stackoverflow.posts_questions` q
+  WHERE DATETIME(q.creation_date) >= (
+    SELECT DATETIME_SUB(DATETIME(creation_date), INTERVAL 3 MONTH)
+    FROM `bigquery-public-data.stackoverflow.posts_questions`
+    ORDER BY creation_date DESC
+    LIMIT 1
+  )
+), UNNEST(tag) AS tag
+GROUP BY tag
+ORDER BY count_last_3_months DESC
+```
+
+---
+
+### Question Velocity by Tag
+
+<br />
+<center>
+<img src="images/stack-overflow_question-velocity.png" style="height:auto;width:100%" />
+</center>
+
+---
+
+### My Experience
+
+* Answer any questions I can
+* Currently use Go and Ruby
+* Know some JavaScript, Python, PHP from years ago
+
+--
+
+```sql
+SELECT
+  tag,
+  COUNT(tag) AS vote_and_accept_count
+FROM (
+  SELECT SPLIT(q.tags, '|') AS tag
+  FROM `bigquery-public-data.stackoverflow.votes` v
+    LEFT JOIN `bigquery-public-data.stackoverflow.posts_answers` a
+      ON v.post_id = a.id
+    LEFT JOIN `bigquery-public-data.stackoverflow.posts_questions` q
+      ON a.parent_id = q.id
+  WHERE a.owner_user_id = 1908967
+    AND v.vote_type_id IN (1, 2)
+    AND DATE(v.creation_date) < DATE('2015-06-21')
+), UNNEST(tag) AS tag
+GROUP BY tag
+ORDER BY vote_and_accept_count DESC
+LIMIT 10
+```
+
+---
+
+### My Tag Vote Counts
+
+<br/>
+<center>
+<img src="images/stack-overflow_grokify_tag-vote-counts.png" style="height:auto;width:80%" />
+</center>
+
+---
+
+### My Tag "Quality"
+
+<br/>
+<center>
+<img src="images/stack-overflow_grokify_top-tags_full.png" style="height:auto;width:100%" />
+</center>
+
+---
+
+class: center, middle, inverse
+
+## Step 4
+
+## Monitor Questions
+
+---
+
+### General Approach
+
+1. Answer anything you can
+2. Bounties with few answers
+3. Any topic you want to learn more about
+
+---
+
+### Question Classification
+
+* Maximize your contribution
+
+<center>
+<img src="images/stack-overflow_question-priority.svg" />
+</center>
+
+* New questions have short *half-life*
+  * Easy *for you* questions are worth answering first
+  * Answer others before traffic decay grows
+* Bounties stay active for up to 7 days
+
+---
+
+class: center, middle, inverse
+
+## Steps 5 & 6
+
+### Post Answers
+### Refine Answers
+
+---
+
+### Answer Techniques
+
+1. Answer should work
+  * If code, try to verify answer before publishing
+    * Non-working answer is worse than no answer
+  * If reference, link to official docs
+2. Show working code
+  * Optionally use Stack Snippets, JSFiddle, regex101, Go Playground
+3. Use references
+  * Links, quotes, images
+  * More official is better: MDN, IETF, Google, etc.
+
+--
+
+
+* For easy questions
+  * Step 1: Provide a minimal, correct answer ASAP
+  * Step 2: Refine answer to provide more info
+
+---
+
+### Simple Example - Question
+
+* Answer ASAP, fully, with authority
+
+<center>
+<img src="images/post_simple_question.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Simple Example - Answer
+
+* Answered 1 minute after accepted answer
+* Explain the issue
+* Provide a specific solution
+* Provide a generial example
+* Link to authoritative references
+* 4 answers. Scores: 15, **10**, 0
+
+<center>
+<img src="images/post_simple_answer.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Simple Reference - Question
+
+* Documentation question, but popular
+
+<center>
+<img src="images/post_simple-reference_question.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Simple Reference - Answer
+
+* Answer the question
+* Provide an authoritative quote
+* Link to official documentation
+* 4 answers. Scores: **85**, 10, 10, 0
+
+<center>
+<img src="images/post_simple-reference_answer.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Regular Example - Question
+
+* Reasonable question (not just RTFD)
+
+<center>
+<img src="images/post_fontawesome_question.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Regular Example - Answer
+
+* Provide working solution
+* Proveable solution via JSFiddle
+* 1 answer. Score: **85**
+
+<center>
+<img src="images/post_fontawesome_answer.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Regular Example - JSFiddle
+
+* JSFiddle is nice
+* Doesn't work on a ship
+
+<center>
+<img src="images/post_fontawesome_jsfiddle.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Bounty Example - Question
+
+* Bounties get more views
+* 505 views
+
+<center>
+<img src="images/post_bounty_question_full.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Bounty Example - Answer
+
+* Organize answer into 2 answers
+* Proveable examples via Stack Snippets
+* 2 answers. Score: **160**, 10*
+
+<center>
+<img src="images/post_bounty_answer_full.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Popular, Late Example - Question
+
+* Researching for yourself
+* SO shows up in search
+* Accepted and multiple answers
+* Doesn't answer the question for you
+
+<center>
+<img src="images/post_popular-late_question_full.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Popular, Late - Answer
+
+* Answered over 2.5 years later
+* 5 answers. Scores: 1335, 940, **710**, 150, 50
+
+<center>
+<img src="images/post_popular-late_answer.png" style="height:auto;width:90%" />
+</center>
+
+---
+
+### Be Tenacious
+
+<center>
+<img src="images/answers_list.png" style="height:auto;width:60%" />
+</center>
+
+---
+
+class: center, middle, inverse
+
+## Step 7
+
+## Have a Good Attitude
+
+---
+
+### Be Humble and Generally Nice
+
+* Be polite
+* Be helpful
+* You are here make others successful
+* Don't worry
+  * Can be anonymous
+  * Can delete answers and questions
+
+---
+
+class: middle, center, inverse
+
+## My Results
+### Reputation: 2,115
+### Posting Days: 28
+### Answer Count: 99
+### Question Count: 6
+### Bounty Points: 100
+
+---
+
+### Calendar Date: 2015-06-21
+
+* Get date using Reputation API
+* Built Go SDK using OpenAPI Spec
+
+```golang
+import(
+  "github.com/grokify/go-stackexchange/client"
+  "github.com/grokify/go-stackexchange/util"
+)
+
+func main() {
+  apiClient := stackexchange.NewAPIClient(stackexchange.NewConfiguration())
+  history, err := util.GetReputationHistoryAll(
+    apiClient, "stackoverflow", "1908967")
+  if err != nil {
+    log.Fatal(err)
+  }
+
+  dayRep, err := history.DateForReputation(int32(2000))
+  if err != nil {
+    log.Fatal(err)
+  }
+  fmt.Printf("DATE [%v]\n", dayRep.Day)
+}
+```
+
+---
+
+### Post Days Query
+
+* Use date in query
+
+```
+WITH post_dates AS (
+  SELECT DISTINCT(post_date)
+  FROM (
+    (
+      SELECT DATE(creation_date) AS post_date
+      FROM `bigquery-public-data.stackoverflow.posts_questions`
+      WHERE owner_user_id = 1908967
+        AND DATE(creation_date) < DATE('2015-06-21')
+      GROUP BY post_date
+    )
+    UNION ALL
+    (
+      SELECT DATE(creation_date) AS post_date
+      FROM `bigquery-public-data.stackoverflow.posts_answers`
+      WHERE owner_user_id = 1908967
+        AND DATE(creation_date) < DATE('2015-06-21')
+      GROUP BY post_date
+    )
+  )
+  GROUP BY post_date
+)
+SELECT COUNT(post_date) AS post_days_count
+FROM post_dates
+```
+
+---
+
+### Post Days Results
+
+<br /><br />
+<center>
+<img src="images/results_28_days.png" style="height:auto;width:70%" />
+</center>
+
+---
+
+class: middle,center,inverse
+
+## Parting Thoughts
+
+#### Be Comfortable
+#### Be Focused
+#### Be Tenacious
+#### Be Humble
+#### Be Helpful
+
+---
+
+class: inverse
+
+### Thank you
+
+Contact & Code: John Wang, aka Grokify
+
+* https://twitter.com/grokify
+* https://github.com/grokify
+* https://stackoverflow.com/users/1908967/grokify
+* https://github.com/grokify/stack-overflow-examples
+
+Credits
+
+* [Stack Overflow API](https://stackoverflow.com/) - Data
+* [Google BigQuery](https://bigquery.cloud.google.com/) - Analytics
+* [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) - SDK Tools
+* [draw.io](https://www.draw.io/) - SVG Tools
+* [Remark.js](https://remarkjs.com/) - Presentation Tools
+
+    </textarea>
+    <div id="slideshow"></div>
+  </body>
+</html>
