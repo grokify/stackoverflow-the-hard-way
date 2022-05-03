@@ -784,12 +784,12 @@ class: middle, center, inverse
 
 ```golang
 import(
-  "github.com/grokify/go-stackexchange/client"
-  "github.com/grokify/go-stackexchange/util"
+	stackoverflow "github.com/grokify/go-stackoverflow/client"
+	"github.com/grokify/go-stackoverflow/util"
 )
 
 func main() {
-  apiClient := stackexchange.NewAPIClient(stackexchange.NewConfiguration())
+  apiClient := stackoverflow.NewAPIClient(stackoverflow.NewConfiguration())
   history, err := util.GetReputationHistoryAll(
     apiClient, "stackoverflow", "1908967")
   if err != nil {
@@ -803,6 +803,8 @@ func main() {
   fmt.Printf("DATE [%v]\n", dayRep.Day)
 }
 ```
+
+Code: https://github.com/grokify/stackoverflow-the-hard-way/blob/main/examples/reputation/main.go
 
 ---
 
@@ -868,7 +870,7 @@ Contact & Code: John Wang, aka Grokify
 * https://twitter.com/grokify
 * https://github.com/grokify
 * https://stackoverflow.com/users/1908967/grokify
-* https://github.com/grokify/stack-overflow-examples
+* https://github.com/grokify/stackoverflow-bigquery
 
 Credits
 
